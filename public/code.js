@@ -4,6 +4,7 @@ document.addEventListener("alpine:init", () => {
       title: "MAXIMUM UNSUPPORTED SPAN API",
       workflow:false,
       homepage: true,
+      about: false,
       UCS_Virgin_Stress_Ratio: false,
       Jn_Description: false,
       Jr_Description: false,
@@ -2622,6 +2623,7 @@ document.addEventListener("alpine:init", () => {
         this.homepage = true;
         this.UCS_Virgin_Stress_Ratio = false;
         this.homepage = false;
+        this.about = false;
         this.Jn_Description = false;
         this.Jr_Description = false;
         this.Ja_Description = false;
@@ -2638,6 +2640,7 @@ document.addEventListener("alpine:init", () => {
         if (currentSection == "UCS_Virgin_Stress_Ratio") {
           this.UCS_Virgin_Stress_Ratio = true;
           this.homepage = false;
+          this.about = false;
           this.Jn_Description = false;
           this.Jr_Description = false;
           this.Ja_Description = false;
@@ -2654,6 +2657,7 @@ document.addEventListener("alpine:init", () => {
         } else if (currentSection == "Jn_Description") {
           this.UCS_Virgin_Stress_Ratio = false;
           this.homepage = false;
+          this.about = false;
           this.Jn_Description = true;
           this.Jr_Description = false;
           this.Ja_Description = false;
@@ -2670,6 +2674,7 @@ document.addEventListener("alpine:init", () => {
         } else if (currentSection == "Ja_Description") {
           this.UCS_Virgin_Stress_Ratio = false;
           this.homepage = false;
+          this.about = false;
           this.Jn_Description = false;
           this.Jr_Description = false;
           this.Ja_Description = true;
@@ -2686,6 +2691,7 @@ document.addEventListener("alpine:init", () => {
         } else if (currentSection == "Jr_Description") {
           this.UCS_Virgin_Stress_Ratio = false;
           this.homepage = false;
+          this.about = false;
           this.Jn_Description = false;
           this.Jr_Description = true;
           this.Ja_Description = false;
@@ -2702,6 +2708,7 @@ document.addEventListener("alpine:init", () => {
         } else if (currentSection == "Jw_Description") {
           this.UCS_Virgin_Stress_Ratio = false;
           this.homepage = false;
+          this.about = false;
           this.Jn_Description = false;
           this.Jr_Description = false;
           this.Ja_Description = false;
@@ -2718,6 +2725,7 @@ document.addEventListener("alpine:init", () => {
         } else if (currentSection == "Rock_Quality_Designator") {
           this.UCS_Virgin_Stress_Ratio = false;
           this.homepage = false;
+          this.about = false;
           this.Jn_Description = false;
           this.Jr_Description = false;
           this.Ja_Description = false;
@@ -2734,6 +2742,7 @@ document.addEventListener("alpine:init", () => {
         } else if (currentSection == "Rock_Quality_Index_Q_Value") {
           this.UCS_Virgin_Stress_Ratio = false;
           this.homepage = false;
+          this.about = false;
           this.Jn_Description = false;
           this.Jr_Description = false;
           this.Ja_Description = false;
@@ -2750,6 +2759,7 @@ document.addEventListener("alpine:init", () => {
         } else if (currentSection == "Stress_Reduction_Ratio") {
           this.UCS_Virgin_Stress_Ratio = false;
           this.homepage = false;
+          this.about = false;
           this.Jn_Description = false;
           this.Jr_Description = false;
           this.Ja_Description = false;
@@ -2766,6 +2776,7 @@ document.addEventListener("alpine:init", () => {
         } else if (currentSection == "Rock_Mass_Rating") {
           this.UCS_Virgin_Stress_Ratio = false;
           this.homepage = false;
+          this.about = false;
           this.Jn_Description = false;
           this.Jr_Description = false;
           this.Ja_Description = false;
@@ -2782,6 +2793,7 @@ document.addEventListener("alpine:init", () => {
         } else if (currentSection == "Excavation_Category") {
           this.UCS_Virgin_Stress_Ratio = false;
           this.homepage = false;
+          this.about = false;
           this.Jn_Description = false;
           this.Jr_Description = false;
           this.Ja_Description = false;
@@ -2798,6 +2810,7 @@ document.addEventListener("alpine:init", () => {
         } else if (currentSection == "Maximum_Unsupported_Span") {
           this.UCS_Virgin_Stress_Ratio = false;
           this.homepage = false;
+          this.about = false;
           this.Jn_Description = false;
           this.Jr_Description = false;
           this.Ja_Description = false;
@@ -2814,6 +2827,7 @@ document.addEventListener("alpine:init", () => {
         } else if (currentSection == "contact_us") {
           this.UCS_Virgin_Stress_Ratio = false;
           this.homepage = false;
+          this.about = false;
           this.Jn_Description = false;
           this.Jr_Description = false;
           this.Ja_Description = false;
@@ -2830,6 +2844,7 @@ document.addEventListener("alpine:init", () => {
         } else if (currentSection == "history") {
           this.UCS_Virgin_Stress_Ratio = false;
           this.homepage = false;
+          this.about = false;
           this.Jn_Description = false;
           this.Jr_Description = false;
           this.Ja_Description = false;
@@ -2843,12 +2858,31 @@ document.addEventListener("alpine:init", () => {
           this.contact_us = false;
           this.history = true;
           this.dashboard = false;
-        } else if (currentSection == "mainMenu") {
+        }else if (currentSection == "about") {
+          this.UCS_Virgin_Stress_Ratio = false;
+          this.homepage = false;
+          this.about = true;
+          this.Jn_Description = false;
+          this.Jr_Description = false;
+          this.Ja_Description = false;
+          this.Jw_Description = false;
+          this.Rock_Quality_Designator = false;
+          this.Rock_Quality_Index_Q_Value = false;
+          this.Stress_Reduction_Ratio = false;
+          this.Rock_Mass_Rating = false;
+          this.Excavation_Category = false;
+          this.Maximum_Unsupported_Span = false;
+          this.contact_us = false;
+          this.history = false;
+          this.dashboard = false;
+        }  
+        else if (currentSection == "mainMenu") {
           this.UCS_Virgin_Stress_Ratio = false;
           this.homepage = true;
           this.dashboard = true;
           this.contact_us = false;
           this.history = false;
+          this.about = false;
         }
       },
       ucs_vsr() {

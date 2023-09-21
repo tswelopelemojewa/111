@@ -13,6 +13,11 @@ app.use(express.static("public"));
 // Makes req.body works (This is known as the middleware)
 app.use(express.json());
 
+
+console.log(process.env.PATH);
+console.log(process.env.PYTHON);
+
+
 // Section that lists all the available price plan starts here
 app.post("/api/ucsvsr_model", function (req, res) {
     const DepthUnderground = req.body.DepthUnderground;
