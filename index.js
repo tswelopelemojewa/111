@@ -1,6 +1,7 @@
 import express from "express"; 
 
 import { PythonShell } from 'python-shell'
+import { GetHistory, GetUCS_virginStress, predictUCS, GetSRF } from "./db.js";
 
 
 
@@ -16,17 +17,74 @@ app.use(express.json());
 
 console.log(process.env.PATH);
 console.log(process.env.PYTHON);
+// displaying historical data
+
+app.get('/api/historical_data/', async (req, res) => {
+
+    const historical_data = await GetHistory(); 
+    console.log(historical_data)
+
+    res.json({
+        historical_data
+    })
+})
+
+// UCS/Virginstress
+app.get('/api/UCS_virginstress/', async (req, res) => {
+
+    const UCS_virginstress = await GetUCS_virginStress(); 
+    console.log(UCS_virginstress)
+
+    res.json({
+        UCS_virginstress
+    })
+})
+
+// app.post('', async (req, res) =>{
+//     const Density = req.body.Density; 
+//     const Depth = req.body.Depth; 
+//     const UCS = req.body.UCS; 
+//     const UCS_PreictedValue = req.body.UCS_PreictedValue
+
+//     await predictUCS(Density, Depth, UCS, UCS_PreictedValue)
+
+//     res.json({
+//         UCS_virginstress
+//     })
+// })
+
+
+// SRF
+app.get('/api/SRF_hist/', async (req, res) => {
+
+    const SRF_hist = await GetSRF(); 
+    console.log(SRF_hist)
+
+    res.json({
+        SRF_hist
+    })
+})
+
+
+
+
+// end of displaying historical data
 
 
 // Section that lists all the available price plan starts here
-app.post("/api/ucsvsr_model", function (req, res) {
+app.post("/api/ucsvsr_model", async function (req, res) {
     const DepthUnderground = req.body.DepthUnderground;
     const Density = req.body.Density;
     const UCS = req.body.UCS;
+    const UCS_PreictedValue = req.body.UCS_PreictedValue;
+
+    
     const options = {
 
         args: [DepthUnderground, Density, UCS]
     }
+
+    await predictUCS(Density, DepthUnderground, UCS, UCS_PreictedValue)
 
     // run python code
     PythonShell.run('python-code/ucsvsr_model.py', options).then(messages => {

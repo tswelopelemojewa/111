@@ -1,7 +1,27 @@
 
 
+
+post http://127.0.0.1:5000/register
+Content-Type: application/json
+
+{
+    "username": "buddy",
+    "role": "software dev",
+    "password": "12345"
+}
+
+###
+GET http://127.0.0.1:5000/api/historical_data/
 ###
 
+GET http://localhost:3008/api/UCS_virginstress/
+
+###
+GET http://localhost:3008/api/SRF_hist/
+
+
+
+###
 post http://localhost:3008/api/Jn_model
 Content-Type: application/json
 
@@ -83,16 +103,15 @@ Content-Type: application/json
 }
 
 ###
-post http://localhost:3008/api/ucsvsr_model
+post http://127.0.0.1:5000/api/ucsvsr_model
 Content-Type: application/json
 
-{
-
-    "GeotechDomain": 2,
-    "DepthUnderground" : 11.98,
+{    
     "Density" : 27000.0,
+    "Depth" : 11.98,
     "UCS" : 50.0
 }
+
 
 ###
 post http://localhost:3008/api/rqd_model
