@@ -2614,7 +2614,7 @@ document.addEventListener("alpine:init", () => {
         ESR_VALUE: "",
   
         // UCS/VSR value declaration
-        DepthUnderground: "",
+        Depth: "",
         UCS: "",
         Density: "",
         ucsvsr_value: "",
@@ -2895,17 +2895,17 @@ document.addEventListener("alpine:init", () => {
         },
         ucs_vsr() {
           axios
-            .post("/api/ucsvsr_model", {
-              DepthUnderground: this.DepthUnderground,
+            .post("/api/ucs_model", {
+              Depth: this.Depth,
               Density: this.Density,
               UCS: this.UCS,
             })
             .then((res) => {
               this.getUCS();
               console.log(res.data);
-              let val = res.data.predictions[0];
-              val = val.split("[")[1];
-              val = val.split("]")[0];
+              let val = res.data.prediction;
+              // val = val.split("[")[1];
+              // val = val.split("]")[0];
               this.ucsvsr_value =
                 "Based on your input, the ratio of the Uniaxial compressive strength to the virgin stress is " +
                 val;
@@ -3032,13 +3032,13 @@ document.addEventListener("alpine:init", () => {
             .post("/api/rqd_model", {
               DepthFrom: this.Depth_from_surface,
               DepthTo: this.depth_to_surface,
-              TrueThickness: this.true_thickness,
+              Truethickness: this.true_thickness,
               Hardness: this.hardness_property,
             })
             .then((res) => {
-              let val = res.data.predictions[0];
-              val = val.split("[")[1];
-              val = val.split("]")[0];
+              let val = res.data.prediction;
+              
+              console.log(res.data)
               this.rmq_value = parseInt(val);
               this.RQDValue =
                 "Based on your input, the predicted Q value is " + val + "%";
@@ -3184,7 +3184,7 @@ document.addEventListener("alpine:init", () => {
           this.ESR_VALUE = "";
           this.NumRQD = "";
           this.rmqMessage = "",
-          this.DepthUnderground = "",
+          this.Depth = "",
           this.UCS = "",
           this.Density = "",
           this.ucsvsr_value = "";

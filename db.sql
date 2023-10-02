@@ -3,21 +3,21 @@ Drop table users
 
 
 
-CREATE TABLE UCS_virginStress(
+CREATE TABLE ucs_virgin_stress(
     Id integer primary key AUTOINCREMENT,
     Density REAL,
     Depth REAL,
     UCS REAL,
-    UCS_PreictedValue REAL
+    PredictedValue REAL
 );
 
--- DROP TABLE SRF;
+-- DROP TABLE ucs_virgin_stress;
 
-SELECT * FROM UCS_virginStress;
+SELECT * FROM ucs_virgin_stress;
 
 
-insert into UCS_virginStress (Density, Depth, UCS, UCS_PreictedValue) values (27000, 32.35, 177.37, 3);
-insert into UCS_virginStress (Density, Depth, UCS) values (27000, 17.75, 53.65);
+insert into ucs_virgin_stress (Density, Depth, UCS, PredictedValue) values (27000, 32.35, 177.37, 3);
+insert into ucs_virgin_stress (Density, Depth, UCS) values (27000, 17.75, 53.65);
 
 -- SRF
 CREATE TABLE SRF(

@@ -14,15 +14,15 @@ Content-Type: application/json
 GET http://127.0.0.1:5000/api/historical_data/
 ###
 
-GET http://localhost:3008/api/UCS_virginstress/
+GET http://127.0.0.1:5000/api/UCS_virginstress/
 
 ###
-GET http://localhost:3008/api/SRF_hist/
+GET http://127.0.0.1:5000/api/SRF_hist/
 
 
 
 ###
-post http://localhost:3008/api/Jn_model
+post http://127.0.0.1:5000/api/Jn_model
 Content-Type: application/json
 
 {
@@ -30,7 +30,7 @@ Content-Type: application/json
 }
 
 ###
-post http://localhost:3008/api/Ja_model
+post http://127.0.0.1:5000/api/Ja_model
 Content-Type: application/json
 
 {
@@ -38,7 +38,7 @@ Content-Type: application/json
 }
 
 ###
-post http://localhost:3008/api/Jr_model
+post http://127.0.0.1:5000/api/Jr_model
 Content-Type: application/json
 
 {
@@ -46,7 +46,7 @@ Content-Type: application/json
 }
 
 ### 
-post http://localhost:3008/api/rmr_model
+post http://127.0.0.1:5000/api/rmr_model
 Content-Type: application/json
 
 {
@@ -55,7 +55,7 @@ Content-Type: application/json
 }
 
 ###
-post http://localhost:3008/api/mus_model
+post http://127.0.0.1:5000/api/mus_model
 Content-Type: application/json
 
 {
@@ -65,7 +65,7 @@ Content-Type: application/json
 
 
 ###
-post http://localhost:3008/api/Jw_model
+post http://127.0.0.1:5000/api/Jw_model
 Content-Type: application/json
 
 {
@@ -73,7 +73,7 @@ Content-Type: application/json
 }
 
 ###
-post http://localhost:3008/api/q_model
+post http://127.0.0.1:5000/api/q_model
 Content-Type: application/json
 
 {
@@ -85,7 +85,7 @@ Content-Type: application/json
 }
 
 ###
-post http://localhost:3008/api/srf_model
+post http://127.0.0.1:5000/api/srf_model
 Content-Type: application/json
 
 {
@@ -95,7 +95,7 @@ Content-Type: application/json
 ###
 
 # ESR not working
-post http://localhost:3008/api/esr_model
+post http://127.0.0.1:5000/api/esr_model
 Content-Type: application/json
 
 {
@@ -103,7 +103,7 @@ Content-Type: application/json
 }
 
 ###
-post http://127.0.0.1:5000/api/ucsvsr_model
+post http://127.0.0.1:5000/api/ucs_model
 Content-Type: application/json
 
 {    
@@ -114,15 +114,14 @@ Content-Type: application/json
 
 
 ###
-post http://localhost:3008/api/rqd_model
+post http://127.0.0.1:5000/api/rqd_model
 Content-Type: application/json
 
 {
     
     "DepthFrom": 9.42,
     "DepthTo": 10.6,
-    "Truethickness":8.47,
-    "Weathering":3.0,
-    "Hardness":3.0
+    "Truethickness": 8.47,
+    "Hardness": 3.0
 }
 
