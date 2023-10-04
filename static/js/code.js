@@ -2626,7 +2626,7 @@ document.addEventListener("alpine:init", () => {
         openHome(currentSection) {
           this.homepage = true;
           this.UCS_Virgin_Stress_Ratio = false;
-          this.homepage = false;
+          // this.homepage = false;
           this.about = false;
           this.Jn_Description = false;
           this.Jr_Description = false;
@@ -3195,7 +3195,7 @@ document.addEventListener("alpine:init", () => {
           this.getSRF();
         },
         // WORK WITH HISSTORICAL DATA
-        history: [],
+        history_list: [],
         UCS_Hist: [],
       SRF_Hist: [],
   
@@ -3203,8 +3203,8 @@ document.addEventListener("alpine:init", () => {
           axios.get('/api/historical_data/')
           .then((res) => {
             console.log(res.data)
-            this.history = res.data.historical_data;
-            console.log(this.history)
+            this.history_list = res.data.historical_data;
+            console.log(this.history_list)
           })
         },
         // GetUCS_virginStress
