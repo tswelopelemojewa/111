@@ -311,3 +311,18 @@ INNER JOIN SRF
     ON Jn.SRF_Id = SRF.Id
 INNER JOIN UCS_virginStress
     ON SRF.UCS_Id = UCS_virginStress.Id;
+
+
+
+
+
+SELECT Jn,
+	    Ja,
+    	Jr,
+        	Jw,
+            	UCS_Mpa,
+                	RQD_p,	Q_Value,
+                    	SRF,
+                        	RMR,
+                            	ESR_VALUE,
+                                	Maximum_unsupported_span FROM dataset ORDER BY id DESC LIMIT 7

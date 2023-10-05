@@ -186,18 +186,20 @@ def logout():
     return redirect(url_for('home'))
 
 
-# @app.route('/api/historical_data/')
-# def historical_data():
-#     conn = sqlite3.connect('capstonedb.db')
-#     c = conn.cursor()
-#     buddy = c.execute("SELECT * FROM dataset ORDER BY id DESC LIMIT 7")
-#     conn.commit()
-#     conn.close()
 
-#     return {
-#         "RESULTS" : buddy
-#     }
+# retrieve historical data
+@app.route('/api/historical_data/')
+def historical_data():
+    conn = sqlite3.connect('capstonedb.db')
+    c = conn.cursor()
+    c.execute("SELECT Jn,Ja,Jr,Jw,UCS_Mpa,RQD_p,Q_Value,SRF,RMR,ESR_VALUE,Maximum_unsupported_span FROM dataset ORDER BY id DESC LIMIT 7")
+    data = c.fetchall()  # Fetch all rows from the cursor
+    conn.close()
 
+    # Convert the data to a list of dictionaries for JSON serialization
+    results = [{"id": row[0], "column1": row[1], "column2": row[2], "column2": row[2],"column2": row[2]} for row in data]
+
+    return jsonify({"RESULTS": results})
 
 # historical_data()
 

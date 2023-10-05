@@ -124,4 +124,5 @@ Content-Type: application/json
     "Truethickness": 8.47,
     "Hardness": 3.0
 }
-
+###
+get http://127.0.0.1:5000/api/historical_data/

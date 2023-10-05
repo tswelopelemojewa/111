@@ -667,10 +667,13 @@
 
         <!-- Contact us section -->
 
-        <div class="row" x-show="contact_us" x-cloak>
-            <!-- Fabchi -->
-
-            <div class="col-md-3 card">
+        <div x-show="contact_us" x-cloak>
+            <br>
+                <h5 class="text-center">GET IN TOUCH</h5>
+                <hr>
+            <div class="row" >
+                 <!-- Fabchi -->
+                <div class="col-md-3 card">
                 <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
 
                     <img src="./static/images/RJ.jpeg" class="img-fluid" />
@@ -748,33 +751,34 @@
 
             </div>
 
+            </div>
+            
         </div>
 
         <!-- History section -->
  
-            <div class="row" x-cloak x-show="history">
-                <div class="" x-show="history">
+            <div  x-cloak x-show="history">
+                <br>
+                <h5 class="text-center">HISTORICAL DATA</h5>
+                <hr>
+                <div class="row" x-show="history">
 
-                    <table x-show="history">
-                        <tr>
-                            <th>Username</th>
-                            <th>Employee ID</th>
-                        </tr>
-                        <tr>
-                            <td>Information comes here</td>
-                            <td>Information comes here</td>
-                        </tr>
-                    </table>
-                    <p style="text-align: center;">FRONT-END INPUT DATA FOR ML API COMPUTATION</p>
+                    <div x-show="history">
+                       
+                            <h6>Username: </h6>
+                            <h6>Employee ID: </h6>
+                       
+                    </div>
+                    <!-- <p style="text-align: center;">FRONT-END INPUT DATA FOR ML API COMPUTATION</p> -->
 
                     <!-- Historical inputs by the admins -->
-                    <table x-show="history">
+                    <!-- <table x-show="history">
                         <tr>
                             <th>tghjk</th>
                             <th>ghgj</th>
                         </tr>
 
-                    </table>
+                    </table> -->
 
                     <br>
                     <p style="text-align: center;">HISTORICAL COMPUTATION BY THE MULTI-MODAL ML MODEL</p>
